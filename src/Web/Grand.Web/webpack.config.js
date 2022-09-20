@@ -20,8 +20,9 @@ module.exports = {
             "./wwwroot/theme/css/catalog/catalog.css",
             "./wwwroot/theme/css/product/product.css",
             "./wwwroot/theme/css/customer/customer.css",
-            "./wwwroot/theme/css/cart/cart.css"
-        ],
+            "./wwwroot/theme/css/cart/cart.css",
+            "./wwwroot/theme/css/overrideStyle.css"
+           ]       
     },
     output: {
         path: path.resolve(__dirname, "wwwroot/bundles/"),

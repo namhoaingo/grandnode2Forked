@@ -57,6 +57,7 @@
 		<Compile Remove="Plugins\**" />
 		<EmbeddedResource Remove="Plugins\**" />
 		<None Remove="Plugins\**" />
+		<None Include="wwwroot\theme\css\overrideStyle.css" />
 		<Content Update="Plugins\**">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
