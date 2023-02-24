@@ -3,9 +3,9 @@ using Grand.Business.Core.Interfaces.Common.Localization;
 using Grand.Business.Core.Interfaces.Common.Logging;
 using Grand.Business.Core.Interfaces.Customers;
 using Grand.Business.Core.Interfaces.Messages;
-using Grand.Infrastructure;
 using Grand.Domain.Blogs;
 using Grand.Domain.Localization;
+using Grand.Infrastructure;
 using Grand.Web.Commands.Models.Blogs;
 using MediatR;
 
@@ -46,9 +46,9 @@ namespace Grand.Web.Commands.Handler.Blogs
                 BlogPostId = request.BlogPost.Id,
                 CustomerId = customer.Id,
                 StoreId = _workContext.CurrentStore.Id,
-                CommentText = request.Model.AddNewComment.CommentText,
+                CommentText = request.Model.CommentText,
                 CreatedOnUtc = DateTime.UtcNow,
-                BlogPostTitle = request.BlogPost.Title,
+                BlogPostTitle = request.BlogPost.Title
             };
             await _blogService.InsertBlogComment(comment);
 
