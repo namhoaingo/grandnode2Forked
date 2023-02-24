@@ -3,7 +3,7 @@ using Grand.Infrastructure.Models;
 
 namespace Grand.Web.Models.Vendors
 {
-    public partial class VendorInfoModel : BaseModel
+    public class VendorInfoModel : BaseModel
     {
         public VendorInfoModel()
         {
@@ -21,7 +21,7 @@ namespace Grand.Web.Models.Vendors
 
         [GrandResourceDisplayName("Account.VendorInfo.Picture")]
         public string PictureUrl { get; set; }
-
+        public bool AllowToUploadFile { get; set; }
         public VendorAddressModel Address { get; set; }
     }
 }

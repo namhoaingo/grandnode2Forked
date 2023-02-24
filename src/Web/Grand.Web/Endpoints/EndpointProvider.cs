@@ -8,7 +8,7 @@ using Microsoft.Extensions.FileSystemGlobbing.Internal;
 
 namespace Grand.Web.Endpoints
 {
-    public partial class EndpointProvider : IEndpointProvider
+    public class EndpointProvider : IEndpointProvider
     {
         public void RegisterEndpoint(IEndpointRouteBuilder endpointRouteBuilder)
         {
@@ -115,7 +115,7 @@ namespace Grand.Web.Endpoints
                             pattern + "account/checkusernameavailability",
                             new { controller = "Account", action = "CheckUsernameAvailability" });
 
-            //passwordrecovery
+            //password recovery
             endpointRouteBuilder.MapControllerRoute("PasswordRecovery",
                             pattern + "passwordrecovery",
                             new { controller = "Account", action = "PasswordRecovery" });
@@ -298,7 +298,7 @@ namespace Grand.Web.Endpoints
 
             //product email a friend
             endpointRouteBuilder.MapControllerRoute("ProductEmailAFriend",
-                            pattern + "productemailafriend/{productId?}",
+                            pattern + "productemailafriend",
                             new { controller = "Product", action = "ProductEmailAFriend" });
             
             //product ask question on product page
@@ -308,7 +308,7 @@ namespace Grand.Web.Endpoints
 
             //reviews
             endpointRouteBuilder.MapControllerRoute("ProductReviews",
-                            pattern + "productreviews/{productId}",
+                            pattern + "productreviews",
                             new { controller = "Product", action = "ProductReviews" });
 
             //set review helpfulness (AJAX link)
@@ -328,7 +328,7 @@ namespace Grand.Web.Endpoints
             //contact us
             endpointRouteBuilder.MapControllerRoute("ContactUs",
                             pattern + "contactus",
-                            new { controller = "Common", action = "ContactUs" });
+                            new { controller = "Contact", action = "Index" });
 
             //change currency 
             endpointRouteBuilder.MapControllerRoute("ChangeCurrency",
@@ -369,7 +369,7 @@ namespace Grand.Web.Endpoints
             // contact attributes with "upload file" type
             endpointRouteBuilder.MapControllerRoute("UploadFileContactAttribute",
                             pattern + "uploadfilecontactattribute/{attributeId}",
-                            new { controller = "Common", action = "UploadFileContactAttribute" });
+                            new { controller = "Contact", action = "UploadFileContactAttribute" });
 
             //CurrentPosition Save
             endpointRouteBuilder.MapControllerRoute("CurrentPosition",
@@ -453,13 +453,7 @@ namespace Grand.Web.Endpoints
 
         private void RegisterCmsRoute(IEndpointRouteBuilder endpointRouteBuilder, string pattern)
         {
-
-            //widgets
-            endpointRouteBuilder.MapControllerRoute("WidgetsByZone",
-                            $"{pattern}widgetsbyzone/",
-                            new { controller = "Widget", action = "WidgetsByZone" });
-
-            //knowledgebase
+            //knowledge base
             endpointRouteBuilder.MapControllerRoute("Knowledgebase",
                             pattern + "knowledgebase",
                             new { controller = "Knowledgebase", action = "List" });
@@ -776,9 +770,7 @@ namespace Grand.Web.Endpoints
 
             endpointRouteBuilder.MapControllerRoute("InstallChangeLanguage", "installchangelanguage",
                             new { controller = "Install", action = "ChangeLanguage" });
-            //upgrade
-            endpointRouteBuilder.MapControllerRoute("Upgrade", "upgrade",
-                            new { controller = "Upgrade", action = "Index" });
+           
         }
 
         private void RegisterCustomizeRoute(IEndpointRouteBuilder endpointRouteBuilder, string pattern)

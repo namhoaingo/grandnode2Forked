@@ -1,6 +1,6 @@
 ﻿@model WishlistModel
 @{ 
-    var addToCartUrl = Model.EmailWishlistEnabled && !Model.IsEditable ? Url.RouteUrl("AddItemToCartFromWishlist", new { customerGuid = @Model.CustomerGuid }) + "&shoppingcartId=" : Url.RouteUrl("AddItemToCartFromWishlist") + "?shoppingcartId=";
+    var addToCartUrl = Model.EmailWishlistEnabled && !Model.IsEditable ? Url.RouteUrl("AddItemToCartFromWishlist", new { customerGuid = Model.CustomerGuid }) + "&shoppingcartId=" : Url.RouteUrl("AddItemToCartFromWishlist") + "?shoppingcartId=";
 }
 <script asp-location="Footer" asp-order="300">
     var vmwishlist = new Vue({
@@ -14,8 +14,7 @@
             deleteFromWishlist(id) {
                 axios({
                     url: '@Url.RouteUrl("DeleteItemFromWishlist")'+'/'+ id,
-                    method: 'post',
-                    headers: { 'Content-Type': 'application/json' }
+                    method: 'get',                    
                 }).then(function (response) {
                     if (response.data.success) {
                         vmwishlist.getModel();
@@ -58,6 +57,7 @@
                 var elementById = document.getElementById(element + id);
                 var data = new FormData();
                 data.append('shoppingcartId', id);
+                data.append('ShoppingCartType', 2);
                 data.append('quantity', elementById.value);
                 data.append('__RequestVerificationToken',
                     document.querySelector('input[name=__RequestVerificationToken]').value);

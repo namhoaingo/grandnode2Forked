@@ -57,6 +57,18 @@
 	<Resource Name="Account.ChangePassword.Button" Area="Front">
 		<Value>Change password</Value>
 	</Resource>
+	<Resource Name="Account.ChangePassword.Errors.Deleted" Area="Front">
+		<Value>Account is deleted</Value>
+	</Resource>
+	<Resource Name="Account.ChangePassword.Errors.LockedOut" Area="Front">
+		<Value>Account is locked out</Value>
+	</Resource>
+	<Resource Name="Account.ChangePassword.Errors.NotActive" Area="Front">
+		<Value>Account is not active</Value>
+	</Resource>
+	<Resource Name="Account.ChangePassword.Errors.NotRegistered" Area="Front">
+		<Value>Account is not registered</Value>
+	</Resource>
 	<Resource Name="Account.ChangePassword.Errors.EmailIsNotProvided" Area="Front">
 		<Value>Email is not entered</Value>
 	</Resource>
@@ -594,6 +606,12 @@
 	<Resource Name="Account.PasswordRecovery.ConfirmNewPassword.Required" Area="Front">
 		<Value>Password is required.</Value>
 	</Resource>
+	<Resource Name="Account.PasswordRecovery.CustomerNotExist" Area="Front">
+		<Value>No customer account found</Value>
+	</Resource>
+	<Resource Name="Account.PasswordRecovery.Deleted" Area="Front">
+		<Value>Account is deleted</Value>
+	</Resource>
 	<Resource Name="Account.PasswordRecovery.Email" Area="Front">
 		<Value>Your email address</Value>
 	</Resource>
@@ -609,6 +627,9 @@
 	<Resource Name="Account.PasswordRecovery.LinkExpired" Area="Front">
 		<Value>Your password recovery link is expired</Value>
 	</Resource>
+	<Resource Name="Account.PasswordRecovery.LockedOut" Area="Front">
+		<Value>Account is locked out</Value>
+	</Resource>
 	<Resource Name="Account.PasswordRecovery.NewPassword" Area="Front">
 		<Value>New password</Value>
 	</Resource>
@@ -618,6 +639,12 @@
 	<Resource Name="Account.PasswordRecovery.NewPassword.Required" Area="Front">
 		<Value>New password is required.</Value>
 	</Resource>
+	<Resource Name="Account.PasswordRecovery.NotActive" Area="Front">
+		<Value>Account is not active</Value>
+	</Resource>
+	<Resource Name="Account.PasswordRecovery.NotRegistered" Area="Front">
+		<Value>Account is not registered</Value>
+	</Resource>
 	<Resource Name="Account.PasswordRecovery.OldPassword" Area="Front">
 		<Value>Old password</Value>
 	</Resource>
@@ -626,6 +653,9 @@
 	</Resource>
 	<Resource Name="Account.PasswordRecovery.PasswordHasBeenChanged" Area="Front">
 		<Value>Your password has been changed</Value>
+	</Resource>
+	<Resource Name="Account.PasswordRecovery.PasswordMatchesWithPrevious" Area="Front">
+		<Value>You entered the password that is the same as one of the last passwords you used. Please create a new password.</Value>
 	</Resource>
 	<Resource Name="Account.PasswordRecovery.RecoverButton" Area="Front">
 		<Value>Recover</Value>
@@ -2647,7 +2677,7 @@
 		<Value>Amount</Value>
 	</Resource>
 	<Resource Name="Admin.Catalog.Products.Bids.CantDeleteWithOrder" Area="Admin">
-		<Value>Cannot delete bid wiht order id</Value>
+		<Value>Cannot delete bid with order id</Value>
 	</Resource>
 	<Resource Name="Admin.Catalog.Products.Bids.CustomerId" Area="Admin">
 		<Value>Customer Id</Value>
@@ -5040,6 +5070,12 @@
 	<Resource Name="Admin.Configuration.Shipping.Warehouses.Fields.AdminComment" Area="Admin">
 		<Value>Admin comment</Value>
 	</Resource>
+	<Resource Name="Admin.Configuration.Shipping.Warehouses.Fields.Code" Area="Admin">
+		<Value>Warehouse code</Value>
+	</Resource>
+	<Resource Name="Admin.Configuration.Shipping.Warehouses.Fields.Code.Required" Area="Admin">
+		<Value>Please provide a warehouse code.</Value>
+	</Resource>	
 	<Resource Name="Admin.Configuration.Shipping.Warehouses.Fields.DisplayOrder" Area="Admin">
 		<Value>Display order</Value>
 	</Resource>
@@ -5323,7 +5359,7 @@
 		<Value>Tax display type</Value>
 	</Resource>
 	<Resource Name="Admin.Configuration.Themes.Failed" Area="Admin">
-		<Value>Failed to upload theme. Make sure you are not uploading already existing one. If so, try deleting it manualy before resubmitting.</Value>
+		<Value>Failed to upload theme. Make sure you are not uploading already existing one. If so, try deleting it manually before resubmitting.</Value>
 	</Resource>
 	<Resource Name="Admin.Configuration.Themes.Upload" Area="Admin">
 		<Value>Upload theme</Value>
@@ -5548,7 +5584,7 @@
 		<Value>Customer</Value>
 	</Resource>
 	<Resource Name="Admin.Content.Knowledgebase.ActivityLogType" Area="Admin">
-		<Value>Acitivty log type</Value>
+		<Value>Activity log type</Value>
 	</Resource>
 	<Resource Name="Admin.Content.Knowledgebase.CreateKnowledgebaseArticle" Area="Admin">
 		<Value>Create article</Value>
@@ -5659,7 +5695,7 @@
 		<Value>Article updated</Value>
 	</Resource>
 	<Resource Name="Admin.Content.Knowledgebase.KnowledgebaseCategory.ActivityLog" Area="Admin">
-		<Value>Acitivity log</Value>
+		<Value>Activity log</Value>
 	</Resource>
 	<Resource Name="Admin.Content.Knowledgebase.KnowledgebaseCategory.Added" Area="Admin">
 		<Value>Category added</Value>
@@ -6691,7 +6727,7 @@
 		<Value>Owner</Value>
 	</Resource>
 	<Resource Name="Admin.Customers.Customers.Fields.Owner.Hint" Area="Admin">
-		<Value>If it's a subaccount, here is the e-mail adddress of parent account (owner account).</Value>
+		<Value>If it's a subaccount, here is the e-mail address of parent account (owner account).</Value>
 	</Resource>
 	<Resource Name="Admin.Customers.Customers.Fields.Password" Area="Admin">
 		<Value>Password</Value>
@@ -7084,7 +7120,7 @@
 		<Value>Active</Value>
 	</Resource>
 	<Resource Name="Admin.Customers.SalesEmployee.Fields.Commission" Area="Admin">
-		<Value>Commisssion</Value>
+		<Value>Commission</Value>
 	</Resource>
 	<Resource Name="Admin.Customers.SalesEmployee.Fields.Commission.IsCommissionValid" Area="Admin">
 		<Value>Commission`s rate is no valid</Value>
@@ -7867,7 +7903,7 @@
 		<Value>Calculate by plugin</Value>
 	</Resource>
 	<Resource Name="Admin.Marketing.Discounts.Fields.CalculateByPlugin.hint" Area="Admin">
-		<Value>Discoutns may be calculated by external plugins. If you have one, enable the setting and choose it from the list.</Value>
+		<Value>Discounts may be calculated by external plugins. If you have one, enable the setting and choose it from the list.</Value>
 	</Resource>
 	<Resource Name="Admin.Marketing.Discounts.Fields.CouponCode" Area="Admin">
 		<Value>Coupon code</Value>
@@ -9454,7 +9490,7 @@
 		<Value>Push notifications</Value>
 	</Resource>
 	<Resource Name="Admin.PushNotifications.Error.NoReceivers" Area="Admin">
-		<Value>No receviers yet. Wait for someone to register for push notifications.</Value>
+		<Value>No receivers yet. Wait for someone to register for push notifications.</Value>
 	</Resource>
 	<Resource Name="Admin.PushNotifications.Fields.ClickUrl" Area="Admin">
 		<Value>Click Url</Value>
@@ -10210,7 +10246,7 @@
 		<Value>'Address type' enabled</Value>
 	</Resource>
 	<Resource Name="Admin.Settings.Customer.AddressFormFields.AddressTypeEnabled.Hint" Area="Admin">
-		<Value>If checked, customers are able to select the type of the adress - Any, Billing, Shipping</Value>
+		<Value>If checked, customers are able to select the type of the address - Any, Billing, Shipping</Value>
 	</Resource>
 	<Resource Name="Admin.Settings.Customer.AddressFormFields.CityEnabled" Area="Admin">
 		<Value>'City' enabled</Value>
@@ -10710,7 +10746,7 @@
 		<Value>Pinterest page URL</Value>
 	</Resource>
 	<Resource Name="Admin.Settings.GeneralCommon.PopupForTermsOfServiceLinks" Area="Admin">
-		<Value>Open terms of service link in popus</Value>
+		<Value>Open terms of service link in popup</Value>
 	</Resource>
 	<Resource Name="Admin.Settings.generalcommon.premiumthemes" Area="Admin">
 		<Value>Customize your store with one of our premium themes</Value>
@@ -11366,6 +11402,9 @@
 	<Resource Name="Admin.Settings.Vendor.AllowCustomersToContactVendors" Area="Admin">
 		<Value>Allow customers to contact vendors</Value>
 	</Resource>
+	<Resource Name="Admin.Settings.Vendor.AllowToUploadFile" Area="Admin">
+		<Value>Allow vendor to upload picture file</Value>
+	</Resource>
 	<Resource Name="Admin.Settings.Vendor.AllowSearchByVendor" Area="Admin">
 		<Value>Allow search by vendor in store advanced search</Value>
 	</Resource>
@@ -11925,7 +11964,7 @@
 		<Value>Greenwich Mean Time (GMT/UTC)</Value>
 	</Resource>
 	<Resource Name="Admin.System.SystemInfo.WebRootPath" Area="Admin">
-		<Value>Absolute path to the directory that contains the web-servable application content files</Value>
+		<Value>Absolute path to the directory that contains the web-server application content files</Value>
 	</Resource>
 	<Resource Name="Admin.System.UserApi.Email" Area="Admin">
 		<Value>Email</Value>
@@ -12920,6 +12959,9 @@
 	<Resource Name="ContactUs.Enquiry.Required" Area="Front">
 		<Value>Enter enquiry</Value>
 	</Resource>
+	<Resource Name="ContactUs.FileUploaded" Area="Front">
+		<Value>Your file successfully uploaded!</Value>
+	</Resource>
 	<Resource Name="ContactUs.FullName" Area="Front">
 		<Value>Your name</Value>
 	</Resource>
@@ -12928,6 +12970,9 @@
 	</Resource>
 	<Resource Name="ContactUs.FullName.Required" Area="Front">
 		<Value>Enter your name</Value>
+	</Resource>
+	<Resource Name="ContactUs.MaximumUploadedFileSize" Area="Front">
+		<Value>Maximum file size is {0} KB</Value>
 	</Resource>
 	<Resource Name="ContactUs.SelectAttribute" Area="Front">
 		<Value>Please select: {0}</Value>
@@ -12943,6 +12988,9 @@
 	</Resource>
 	<Resource Name="ContactUs.TextboxMinimumLength" Area="Front">
 		<Value>{0} : minimum length is {1} chars</Value>
+	</Resource>
+	<Resource Name="ContactUs.ValidationFileAllowed" Area="Front">
+		<Value>This file extension does not allow to upload</Value>
 	</Resource>
 	<Resource Name="ContactUs.YourEnquiryHasBeenSent" Area="Front">
 		<Value>Your enquiry has been successfully sent to the store owner.</Value>
@@ -15296,6 +15344,9 @@
 	<Resource Name="ShoppingCart.AlreadyHighestBidder" Area="Front">
 		<Value>You are already the highest bidder</Value>
 	</Resource>
+	<Resource Name="ShoppingCart.AlreadyReservation" Area="Front">
+		<Value>You have are already reserved this resource</Value>
+	</Resource>	
 	<Resource Name="ShoppingCart.AssociatedAttributeWarning" Area="Front">
 		<Value>{0}. {1}. {2}</Value>
 	</Resource>
@@ -15904,6 +15955,9 @@
 	</Resource>
 	<Resource Name="Vendor.Reviews" Area="Front">
 		<Value>Reviews</Value>
+	</Resource>
+	<Resource Name="vendor.reviews.empty" Area="Front">
+		<Value>There are no reviews yet</Value>
 	</Resource>
 	<Resource Name="VendorReviews.Helpfulness.OnlyRegistered" Area="Front">
 		<Value>Only registered customers can set review helpfulness.</Value>
