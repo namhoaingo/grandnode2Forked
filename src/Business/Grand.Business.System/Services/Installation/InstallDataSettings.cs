@@ -307,13 +307,13 @@ namespace Grand.Business.System.Services.Installation
             });
 
             await _settingService.SaveSetting(new AddressSettings {
-                NameEnabled = false,
-                CompanyEnabled = true,
+                NameEnabled = true,
+                CompanyEnabled = false,
                 StreetAddressEnabled = true,
                 StreetAddressRequired = true,
-                StreetAddress2Enabled = true,
-                ZipPostalCodeEnabled = true,
-                ZipPostalCodeRequired = true,
+                StreetAddress2Enabled = false,
+                ZipPostalCodeEnabled = false,
+                ZipPostalCodeRequired = false,
                 CityEnabled = true,
                 CityRequired = true,
                 CountryEnabled = false,
