@@ -210,7 +210,7 @@ namespace Grand.Business.System.Services.Installation
                 NewProductsEnabled = true,
                 NewProductsOnHomePage = false,
                 NewProductsNumberOnHomePage = 6,
-                CompareProductsEnabled = true,
+                CompareProductsEnabled = false,
                 CompareProductsNumber = 4,
                 ProductSearchAutoCompleteEnabled = true,
                 ProductSearchAutoCompleteNumberOfProducts = 10,
@@ -269,7 +269,7 @@ namespace Grand.Business.System.Services.Installation
                 HideReviewsTab = false,
                 HideCoursesTab = true,
                 HideSubAccountsTab = true,
-                HideOutOfStockSubscriptionsTab = false,
+                HideOutOfStockSubscriptionsTab = true,
                 HideAuctionsTab = true,
                 HideNotesTab = true,
                 HideDocumentsTab = true,
@@ -292,9 +292,9 @@ namespace Grand.Business.System.Services.Installation
                 PhoneEnabled = false,
                 FaxEnabled = false,
                 AcceptPrivacyPolicyEnabled = false,
-                NewsletterEnabled = true,
+                NewsletterEnabled = false,
                 NewsletterTickedByDefault = true,
-                HideNewsletterBlock = false,
+                HideNewsletterBlock = true,
                 RegistrationFreeShipping = false,
                 NewsletterBlockAllowToUnsubscribe = false,
                 OnlineCustomerMinutes = 20,
@@ -340,7 +340,7 @@ namespace Grand.Business.System.Services.Installation
             });
 
             await _settingService.SaveSetting(new LoyaltyPointsSettings {
-                Enabled = true,
+                Enabled = false,
                 ExchangeRate = 1,
                 PointsForRegistration = 0,
                 PointsForPurchases_Amount = 10,
@@ -398,7 +398,7 @@ namespace Grand.Business.System.Services.Installation
                 AttachPdfInvoiceToOrderPlacedEmail = false,
                 AttachPdfInvoiceToOrderCompletedEmail = false,
                 AttachPdfInvoiceToOrderPaidEmail = false,
-                MerchandiseReturnsEnabled = true,
+                MerchandiseReturnsEnabled = false,
                 MerchandiseReturns_AllowToSpecifyPickupAddress = false,
                 MerchandiseReturns_AllowToSpecifyPickupDate = false,
                 MerchandiseReturns_PickupDateRequired = false,
@@ -556,7 +556,7 @@ namespace Grand.Business.System.Services.Installation
             });
 
             await _settingService.SaveSetting(new WidgetSettings {
-                ActiveWidgetSystemNames = new List<string> { "Widgets.Slider" },
+                ActiveWidgetSystemNames = new List<string>(),
             });
 
             await _settingService.SaveSetting(new GoogleAnalyticsSettings() {
