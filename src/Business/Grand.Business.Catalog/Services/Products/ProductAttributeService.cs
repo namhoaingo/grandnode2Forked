@@ -289,10 +289,10 @@ namespace Grand.Business.Catalog.Services.Products
             var pav = pavs?.ProductAttributeValues.FirstOrDefault(x => x.Id == productAttributeValue.Id);
             if (pav != null)
             {
-                var pavs = p.ProductAttributeMappings.Where(x => x.Id == productAttributeMappingId).FirstOrDefault();
+                pavs = p.ProductAttributeMappings.Where(x => x.Id == productAttributeMappingId).FirstOrDefault();
                 if (pavs != null)
                 {
-                    var pav = pavs.ProductAttributeValues.Where(x => x.Id == productAttributeValue.Id).FirstOrDefault();
+                    pav = pavs.ProductAttributeValues.Where(x => x.Id == productAttributeValue.Id).FirstOrDefault();
                     if (pav != null)
                     {
                         pav.AttributeValueTypeId = productAttributeValue.AttributeValueTypeId;
@@ -313,27 +313,29 @@ namespace Grand.Business.Catalog.Services.Products
                         pav.CameraBeta = productAttributeValue.CameraBeta;
                         pav.CameraRadius = productAttributeValue.CameraRadius;
 
-                await _productRepository.UpdateToSet(productId, x => x.ProductAttributeMappings, z => z.Id, productAttributeMappingId, pavs);
+                        await _productRepository.UpdateToSet(productId, x => x.ProductAttributeMappings, z => z.Id, productAttributeMappingId, pavs);
+                    }
+
+                    //cache
+                    await _cacheBase.RemoveByPrefix(string.Format(CacheKey.PRODUCTS_BY_ID_KEY, productId));
+
+                    //event notification
+                    await _mediator.EntityUpdated(productAttributeValue);
+
+                }
             }
-
-            //cache
-            await _cacheBase.RemoveByPrefix(string.Format(CacheKey.PRODUCTS_BY_ID_KEY, productId));
-
-            //event notification
-            await _mediator.EntityUpdated(productAttributeValue);
         }
-
         #endregion
 
-        #region Product attribute combinations
+                #region Product attribute combinations
 
-        /// <summary>
-        /// Deletes a product attribute combination
-        /// </summary>
-        /// <param name="combination">Product attribute combination</param>
-        /// <param name="productId">Product ident</param>
+                /// <summary>
+                /// Deletes a product attribute combination
+                /// </summary>
+                /// <param name="combination">Product attribute combination</param>
+                /// <param name="productId">Product ident</param>
         public virtual async Task DeleteProductAttributeCombination(ProductAttributeCombination combination, string productId)
-        {
+        {  
             if (combination == null)
                 throw new ArgumentNullException(nameof(combination));
 

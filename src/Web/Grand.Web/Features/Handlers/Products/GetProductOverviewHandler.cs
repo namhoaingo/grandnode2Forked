@@ -534,7 +534,6 @@ namespace Grand.Web.Features.Handlers.Products
                 result.Add(await PreparePictureModel(secondPicture));
             
             return result;
-/
             #endregion
         }
 
